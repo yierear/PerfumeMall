@@ -59,11 +59,11 @@ $(function(){
 				{case value="未付款"}
 							<font color="red"></font>&nbsp;&nbsp;
 							<a class="del"  href="javascript:void(0)" id="{$order.orderID}" >
-							<img src="__ROOT__/public/static/image/sc.jpg" width="69" height="19"/>
+							<img src="__ROOT__/public/static/image/cancel.png" width="55" height="20"/>
 						</a>
 						&nbsp;
 				 		<a href="{:url('order/pay')}?id={$order.orderID}&money={$order.shifu}"> 
-					 		<img src="__ROOT__/public/static/image/zx.jpg" width="69" height="19">
+					 		<img src="__ROOT__/public/static/image/pay.png" width="55" height="20">
 						</a>
 				{/case}
 				{case value="已发货"}											
