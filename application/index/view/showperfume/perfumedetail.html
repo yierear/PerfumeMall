@@ -7,10 +7,9 @@
 	/*---详情页-----*/
 	.detail{
 		font-weight:bold;
-		font-size:medium;
 		height:40px;
 		line-height:100px;
-		text-align:center;
+		text-align:left;
 	}
 	</style>
 </head>
@@ -52,23 +51,28 @@
      		</a>
      	</td>
      </tr>
+     <tr><td colspan=3 align="center"><div style='line-height:100px;'>
+     -------------------------------------------------------------------香水详情-------------------------------------------------------------------</div>
+     </td></tr>
      <tr class="detail">
-     	<td colspan=3 align="center"><font size=6>香水细节图</font></td>
+     	<td colspan=2 align="center"><font size=5>香水细节图</font></td>
+     	<td align="center"><font size=5>香水的主要原料</font></td>
      </tr>
-     <tr><td colspan=3 align="center"><img src="__ROOT__/public/static/picture/{$perfume.pictured}" border=0></td></tr>
+     <tr>
+     	<td rowspan=3 colspan=2 align="center"><img src="__ROOT__/public/static/picture/{$perfume.pictured}" border=0></td>
+     	<td  align="center"><img src="__ROOT__/public/static/picture/{$perfume.ylpicture}" border=0></td>
+     
+     </tr>
+     
      <tr class="detail">
-     	<td colspan=3 align="center"><font size=6>香水的主要原料</font></td>
+     	<td  align="center"><font size=5>所属品牌：{$perfume.pclass1}</font></td>
      </tr>
-     <tr><td colspan=3 align="center"><img src="__ROOT__/public/static/picture/{$perfume.ylpicture}" border=0></td></tr>
-     <tr class="detail">
-     	<td colspan=3 align="center"><font size=6>所属品牌：{$perfume.pclass1}</font></td>
-     </tr>
-     <tr><td colspan=3 align="center"><img src="__ROOT__/public/static/picture/{$perfume.pingpaipicture}" border=0></td></tr>
+     <tr><td align="center"><img src="__ROOT__/public/static/picture/{$perfume.pingpaipicture}" border=0></td></tr>
  </table>
 
-<table style='width:999px;font-weight:bold;border:1px solid;align:center;height:60px;'>
-<tr><td style='font-size:30;text-align:center'>用户评价</td></tr>
-</table>
+<table><tr><td colspan=3 align="center"><div style='line-height:100px;'>
+     -------------------------------------------------------------------用户评价-------------------------------------------------------------------</div>
+</td></tr></table>
 <!--评价循环开始 -->
 {if empty($shoplists)}
 <table style='width:999px;font-size:small;font-color:grey;border-width:1px;border-style:solid;text-align:center;height:120px;'>
