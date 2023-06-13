@@ -39,20 +39,21 @@ class Index extends Controller
         
     }
     
-//     public function sort(){
-//         $sign = $_POST['select'];
-//         $data = Db::table('perfume')
-//                 ->order('SelledNum','desc')
-//                 ->paginate(5);
-
-//         $this->assign('sort',$data);
-//         $page=$data->render();
-//         $this->assign('page1',$page);
-//         return $this->fetch();
-//     }
     
     public function showperfume(){      
-        $data = Db::table('perfume')->order('SelledNum','desc')->paginate(5);
+        $searchstr="";
+               
+        if($_GET){
+            $pname = $_GET['pname'];
+            $pvalue = $_GET['pvalue'];
+            if($pname==='pclass'){
+                $searchstr="pclass like '%$pvalue%'";
+            }else if($pname==='pclass'){
+                
+            }
+        }            
+        
+        $data = Db::table('perfume')->where($searchstr)->order('SelledNum','desc')->paginate(5);
         $this->assign('result',$data);
         $page=$data->render();
         $this->assign('page',$page);
