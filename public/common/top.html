@@ -1,0 +1,47 @@
+<meta charset="utf-8">
+<center>
+<table width=999px border=0 >
+<tr>
+	<td rowspan=2 style="width:150px; height:68px">
+		<img src="__ROOT__/public/static/image/logo3.png" width="80" height="100" border="0">
+	</td>
+	<td align="center">
+		<img src="__ROOT__/public/static/image/slogan.png" width="700" height="80" border="0">
+	</td>
+	
+	<td style="font-size:x-small;text-align:center;">
+		<a href="{:url('order/showorder')}" style="color:Black;text-decoration:none;font-family:cursive " >订单</a>&nbsp;&nbsp;
+		<a href="{:url('cart/showcart')}" style="color:Black;text-decoration:none;font-family:cursive">购物车</a>
+	</td>
+</tr>
+<tr >
+	<td  style="height:30px" align="center">
+	{if condition="$Think.session.email eq ''"}
+		<a href="{:url('login/login')}" style="font-size:x-medium;text-decoration:none;color:Black;font-family:cursive">登录</a>&nbsp;&nbsp;
+	{else}
+		<a href="{:url('login/logOut')}" style="font-size:x-medium;text-decoration:none;color:Black;font-family:cursive">退出</a>&nbsp;&nbsp;
+	{/if}
+		<a href="{:url('register/register')}" style="font-size:x-medium;text-decoration:none;color:Black;font-family:cursive">注册</a>&nbsp;&nbsp;
+		<a href="{:url('admin/adminlogin/login')}" style="font-size:x-medium;text-decoration:none;color:Black;font-family:cursive">后台登录</a>&nbsp;&nbsp;
+	</td>
+</tr>
+<tr>
+	<td colspan=3 align="center" style="background-color:rgb(212,182,132); font-size: small;text-align:center; width:999px;height:40px">
+ 		<span style=" color:White;"> |</span> &nbsp; &nbsp; &nbsp;
+    	<a href="{:url('index/index')}" style="text-decoration:none;">
+    		<span style=" color:White; font-weight:bold; font-size:medium; font-family:cursive">首页</span>
+    	</a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
+    	<span style=" color:White;"> |</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    	<a href="{:url('index/showperfume')}"  style=" text-decoration:none;">
+    		<span style=" color:White; font-weight:bold; font-size:medium; font-family:cursive">香水</span>
+    	</a>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; 
+    	<span style=" color:White;"> |</span>&nbsp;&nbsp;&nbsp;
+	</td>
+</tr>
+<tr>
+	<td colspan=3 style=" font-size: small;text-align:center; width:999px;height:35px">
+	<span style="font-weight:bold; font-size:x-small; font-family:宋体"></span>
+	</td>
+</tr>
+</table>
+</center>

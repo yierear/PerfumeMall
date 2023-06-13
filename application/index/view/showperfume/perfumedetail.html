@@ -1,0 +1,71 @@
+﻿{include  file="./public/common/top.html"/}
+<meta charset="utf-8">
+<head>
+    <title>香谷之旅 </title>
+    <link href="__ROOT__/public/static/css/StyleIndex.css" rel="Stylesheet" type="text/css" /></head>
+</head>
+<center>
+ <table style='width:830px;border-width:1px;border-style:dotted;align:center;'>
+     <tr>
+        <td rowspan=7 width=200>
+         <img src="__ROOT__/public/static/picture/{$perfume.pictureb}"></td>
+        <td colspan=2 align=center><div style='font-weight:bold;font-size:medium;height:40px;line-height:40px;color:#000066;text-align:center;border-width:1px;  border-style:solid;border-color:red;'>
+           {$perfume.pname}</div></td>          	
+     </tr>
+     <tr>
+       <td width=50><font size=2>前调：</font></td>
+       <td><font size=2>{$perfume.qiandiao}</font></td> 
+     </tr>
+     <tr>
+     	<td width=50><font size=2>中调：</font></td>
+     	<td><font size=2>{$perfume.zhongdiao}</font></td>
+     </tr>
+    <tr>
+     	<td width=50><font size=2>后调：</font></td>
+     	<td><font size=2>{$perfume.houdiao}</font></td>
+     </tr>
+     <tr>
+     	<td width=50><font size=2>简介：</font></td>
+     	<td><font size=2>{$perfume.shuoming}</font></td>
+     </tr>
+     <tr>
+     	<td colspan=2><div style='text-align:left;font-size: medium; color: #000066;'>
+     	<div style='text-decoration:line-through;margin-top:8px;'>原价:￥{$perfume.price}</div>
+     	现价：<font size=4 color=red><b>￥{$perfume.yourprice}</b></font></div>
+     	</td>
+     </tr>
+     <tr>
+     	<td colspan=2><a href='{:url('cart/addCart')}?perfumeID={$perfume.perfumeID}'>
+     	<img src='__ROOT__/public/static/image/ingwc_ico.jpg' border=0></a></td>
+     </tr>
+     <tr><td colspan=3><img src="__ROOT__/public/static/picture/{$perfume.pictured}" border=0></td></tr>
+     <tr><td colspan=3><img src="__ROOT__/public/static/picture/{$perfume.ylpicture}" border=0></td></tr>
+     <tr><td colspan=3><img src="__ROOT__/public/static/picture/{$perfume.pingpaipicture}" border=0></td></tr>
+ </table>
+
+<table style='width:830px;font-weight:bold;border-width:1px;border-style:dotted;align:center;height:40px;'>
+<tr><td>用户评价</td></tr>
+</table>
+<!--评价循环开始 -->
+{foreach $shoplists as $shoplist}
+<table style='width:830px;font-size:small;border-width:1px;border-style:solid;align:center;height:120px;'>
+<tr>
+<td width=130 rowspan=2><img src='__ROOT__/public/static/picture/{$perfume.pictures}'><br>
+{$shoplist.email}
+</td>
+<td>整体评价：
+
+{for start="0" end="$shoplist.pjstar"}
+<img src="__ROOT__/public/static/image/review_star_fen.gif">
+{/for}
+{for start="$shoplist.pjstar" end="5"}
+<img src="__ROOT__/public/static/image/review_star_fen_gray.gif">
+{/for}
+</td>
+<td align=right>评价时间：{$shoplist.pjtime}&nbsp;&nbsp;&nbsp;IP:{$shoplist.pjip}</td>
+</tr>
+<tr><td colspan=2>评价内容：{$shoplist.pjcontent}</tr>
+</table>
+{/foreach}
+<!--评价循环结束 -->
+</center>

@@ -1,0 +1,59 @@
+{include  file="./public/common/admintop.html"/}
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+<style type="text/css">
+		.box{
+				background-image:url(__ROOT__/public/static/image/background.png);
+			background-size: cover;
+            }
+           
+	</style>
+</head>
+<body>
+	<center>
+		<div class="box">
+			<form action="{:url('adminlogin/doLogin')}" method="post" name=f>
+				<table style="width:500px; border-width:3px; border-style:dotted;">
+					<tr>
+					<br><br><br>
+						<td colspan=2 style="text-align:center;height:60px;">香谷之旅后台登录</td>
+					</tr>
+					<tr style="text-align:center;">
+	 					<td style="text-align:right;height:30px;">用户名：</td>
+						<td align=left><input type=text name="username" value="admin"></td>
+					</tr>
+					<tr>
+						<td style="text-align:right;height:60px;">密码：</td>
+						<td align=left>
+							<input type="password" name="password">
+						</td>
+					</tr>
+					 <form action="{:url('adminlogin/doLogin')}" method="post">
+
+        <img src="image_captcha.php"  onclick="this.src='image_captcha.php?'+new Date().getTime();" width="200" height="200"><br/>
+
+        <input type="text" name="captcha" placeholder="请输入图片中的验证码"><br/>
+
+        <input type="submit" value="验证">
+
+    </form>
+					<tr>
+						<td colspan=2 style="text-align:center;height:60px;">
+							<input type=submit name=s style="background-color:#D4B684;" value="登录">
+						</td>
+					</tr>
+				</table>
+			</form>
+			<br><br><br><br><br><br><br><br><br><br><br>
+			
+			
+		</div>
+		<tr style="text-align:center;">Copyright © 2023, PerfumeMall.com, All Rights Reserved 粤华师备 20132003040号 粤ICP备 123456号</tr>
+
+	</center>
+	
+</body>
+
+</html>
