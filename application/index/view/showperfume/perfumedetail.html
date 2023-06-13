@@ -70,10 +70,13 @@
 <tr><td style='font-size:30;text-align:center'>用户评价</td></tr>
 </table>
 <!--评价循环开始 -->
-<!--<table style='width:999px;font-size:small;font-color:grey;border-width:1px;border-style:solid;align:center;height:120px;'>
+{if empty($shoplists)}
+<table style='width:999px;font-size:small;font-color:grey;border-width:1px;border-style:solid;text-align:center;height:120px;'>
 <tr><td><i>暂无用户评价</i></td></tr>
-</table>-->
+</table>
+{/if}
 {foreach $shoplists as $shoplist}
+
 <table style='width:999px;font-size:small;border-width:1px;border-style:solid;align:center;height:120px;'>
 <tr>
 <td width=130 rowspan=2><img src='__ROOT__/public/static/picture/{$perfume.pictures}'><br>
@@ -92,6 +95,8 @@
 </tr>
 <tr><td colspan=2>评价内容：{$shoplist.pjcontent}</tr>
 </table>
+
 {/foreach}
+
 <!--评价循环结束 -->
 </center>
