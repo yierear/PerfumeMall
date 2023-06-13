@@ -6,8 +6,7 @@
 	<title>填写订单</title>
 	<link rel="stylesheet" href="__ROOT__/public/static/css/basic.css" >
 	<link rel="stylesheet" href="__ROOT__/public/static/css/order.css" >
-	<link rel="stylesheet" href="__ROOT__/public/static/font-awesome-4.5.0/css/font-awesome.min.css" >
-	<link rel="icon" href="__ROOT__/public/static/image/icon.png" type="image/png">
+	<link rel="stylesheet" href="__ROOT__/public/static/font-awesome-4.5.0/css/font-awesome.min.css" >	
 	<script src="__ROOT__/public/static/js/jquery-1.8.3.min.js"></script>	
 <script>
 //文档就绪事件开始
@@ -253,16 +252,16 @@ function EditBuyer(){
 }
 </script>
 </head>
-<body>
 
+<body>
 	<div id="section">
 		<div id="center">
-		<div class="edit-order">
-			<div class="order-info">
-				<div class="info-bar">
-					<center><span>填写订单信息</span></center>
-				</div>
-			</div>
+			<div class="edit-order">
+					<div class="order-info">
+						<div class="info-bar">
+							<center><span>填写订单信息</span></center>
+						</div>
+					</div>
 			<div id="select-consignee" class="order-bar">
 				<div class="bar-title">
 					<span>收货人信息</span>
@@ -278,18 +277,14 @@ function EditBuyer(){
 					{assign name="isSelect" value="select"}
 				{/if}
 				
-				<input type="hidden" name="custID" value="{$Customer.custID}">
-				
+				<input type="hidden" name="custID" value="{$Customer.custID}">				
 				<div id="scn{$Customer.custID}" class="bar-info">			
-					<div class="{$isSelect} select-name" onclick="Select(this)">{$Customer.sname}</div>
-					
-					<span class="custID" id="{$isSelect}custID" style="display:none;">{$Customer.custID}</span>
-					
+					<div class="{$isSelect} select-name" onclick="Select(this)">{$Customer.sname}</div>				
+					<span class="custID" id="{$isSelect}custID" style="display:none;">{$Customer.custID}</span>					
 					<span class="name" id="{$isSelect}name">{$Customer.sname}</span>
 					<span class="address" id="{$isSelect}address">{$Customer.address}</span>
 					<span class="phone" id="{$isSelect}phone">{$Customer.mobile}</span>
-					
-				
+
 				{if condition="$Customer.cdefault eq '1' "}
 					<span class="default-address">默认地址</span>
 					<a class="edit" href="javascript:ConsigneeOper('{$Customer.custID}','edit')">编辑</a>
@@ -341,37 +336,12 @@ function EditBuyer(){
 			</div>
 			<div class="order-bar">
 				<div class="bar-title">
-					<span>贺卡留言+署名</span>
+					<span>定制明信片留言</span>
 				</div>
 				<div>
 				<span class="messagespan">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最多200字，您还可以输入<span class="type-word">200</span>字。（仅支持中文，英文）</span><br/>			
 					<textarea name="message" id="message" cols="42" rows="5" placeholder="贺卡留言+署名 "></textarea>
-					<div class="send-word">
-						<div class="for-who who-selected">送恋人</div>
-						<div class="for-who">送朋友</div>
-						<div class="for-who">送长辈</div>
-						<div class="words">
-							<span class="word-select">1.最后一束光熄灭时，只记得你的气味。</span>
-							<span class="word-select">2.世间的温柔香气，皆如干净的云朵和你。</span>
-							<span class="word-select">3.香气和爱停留的地方，没有晦暗和阴霾。</span>
-							<span class="word-select">4.用香气筑成花园，再说一次我爱你。</span>
-							<span class="word-select">5.当桂花浸在茶云里，香气通往的是诗与远方。</span>
-						</div>
-						<div class="words">
-							<span class="word-select">1.偶尔的奢侈，是生活的光亮。</span>
-							<span class="word-select">2.糟糕的心情，要用美好才能治愈。</span></span>
-							<span class="word-select">3.气味的独特，比千篇一律的模板更能宣示自己的能力。</span>
-							<span class="word-select">4.不求同年同月同日生，但求同年同月同日疯</span>
-							<span class="word-select">5.无私无邪无猜无疑的友情无价，你是我买不到的奢华</span>
-						</div>
-						<div class="words">
-							<span class="word-select">1.亲爱的妈妈：您曾用您坚实的臂弯为我撑起一片蓝天；而今，我也要用我日益丰满的羽翼为您遮挡风雨。妈妈，我永远爱您！生日快乐！祝我的美女妈妈越来越青春，身体健康，未来的我可以每个假期带你出去纵横~</span>
-							<span class="word-select">2.妈妈，送您一份母亲节的礼物：香水，您所到之处皆是扑鼻芬芳！母亲节快乐！。</span>
-							<span class="word-select">3.引一缕清风，为妈妈带去轻松；采一缕阳光，为妈妈送去芬芳；掬一捧清水，为妈妈消去疲惫。祝妈妈生日快乐！</span>
-							<span class="word-select">4.不想时间过得那么快，因为我想有再多一点时间回家陪着你。不要觉得自己老了，在别人眼里，你还只是我姐呢。生日快乐，妈，我爱你！</span>
-							<span class="word-select">5.父爱如山，父爱无言，您总是微笑着担起了整个家庭。在我心中，您是全天下最好的爸爸。</span>
-						</div>
-					</div><br>
+					<br>
 				</div>
 				
 			</div>

@@ -95,23 +95,23 @@ function chk(){
 <td></td>
 <td>
 <input type="image" onclick="del(this,{$cart.cartID});" width="41" height="20"
-		src="__ROOT__/public/static/image/04shop_deleteID.gif">
+		src="__ROOT__/public/static/image/delete.svg">
 </td>
 </tr>
 {/volist}
 </tbody>
 				<tr>
-					<td colspan="6" align="right">总计:￥</td>
-					<td id="total" align="right"
-						style="color: red; font-size: 16px; font-bold: true;">$sum</td>
-					<td>元</td>
+					<td colspan="6" align="right">总计:</td>
+					<td id="total" align="center"
+						style="color: #BB2732; font-size: 25px; font-bold: true;">$sum</td>
+					<td align="left">元</td>
 				</tr>
  </table>
 </form>
 
 <div style="float:center;width:999;">
-<a href="{:url('index/index')}"><img src="__ROOT__/public/static/image/continue.png" border=0></a>&nbsp;
-<a href="{:url('cart/clearCart')}"><img src="__ROOT__/public/static/image/clearCart.png" border=0></a>&nbsp;
-<input type='image' src='__ROOT__/public/static/image/submitOrder.png' onclick='javascript:form1.submit()'>
+<a href="{:url('index/index')}"><img src="__ROOT__/public/static/image/continue.png" border=0 width="92" height="41"></a>&nbsp;
+<a href="{:url('cart/clearCart')}"><img src="__ROOT__/public/static/image/clearCart.png" border=0 width="90" height="39"></a>&nbsp;
+<input type='image' src='__ROOT__/public/static/image/submitOrder.png' onclick='javascript:form1.submit()' width="90" height="40">
 
  </center>
