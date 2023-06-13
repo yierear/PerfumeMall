@@ -3,37 +3,37 @@
 <table width=999px border=0>
 <tr>
 	<td rowspan=2>
-		<img src="__ROOT__/public/static/image/logo3.png" style="width:80px; height:68px"> 
+		<img src="__ROOT__/public/static/image/logo3.png" style="width:80px; height:100px"> 
 		</td>
 	<td style="text-align:center;">
-		<img src="__ROOT__/public/static/image/slogan1.png" style="width:600px;height:60px">
+		<img src="__ROOT__/public/static/image/slogan1.png" style="width:600px;height:80px">
 	</td>
 
-<td style=" font-size:x-small;text-align:center;">
-
-{if condition="$Request.session.username neq '' "}
-<a href="{:url('adminlogin/logOut')}" style="text-decoration:none;color:Black">退出</a>&nbsp;&nbsp;
-{/if}
-</td>
+	<td style=" font-size:x-small;text-align:center;">
+	{if condition="$Request.session.username neq '' "}
+	<a href="{:url('adminlogin/logOut')}" style="text-decoration:none;color:Black">退出</a>&nbsp;&nbsp;
+	{/if}
+	</td>
 </tr>
 <tr>
 
 
 </tr>
-<tr><td colspan=3 style="background-color:rgb(212,182,132); font-size: small;text-align:center; width:999px;height:40px">
-  <span style=" color:White; font-weight:bold; font-size:medium; font-family:宋体">&nbsp; &nbsp; &nbsp;
-    <a href="{:url('perfume/index')}"  style=" text-decoration:none;"><span style=" color:White; font-weight:bold; font-size:medium; font-family:宋体">香水管理</span></a>
+<tr>
+	<td colspan=3 style="background-color:rgb(212,182,132); font-size: small;text-align:center; width:999px;height:40px">
+  	<span style=" color:White; font-weight:bold; font-size:medium;">&nbsp; &nbsp; &nbsp;
+    <a href="{:url('perfume/index')}"  style=" text-decoration:none;"><span style=" color:White; font-weight:bold; font-size:medium;">香水管理</span></a>
      &nbsp; &nbsp; &nbsp;|&nbsp;&nbsp;&nbsp;
-    <a href="{:url('order/orderlist')}"  style=" text-decoration:none;"><span style=" color:White; font-weight:bold; font-size:medium; font-family:宋体">订单管理</span></a>
+    <a href="{:url('order/orderlist')}"  style=" text-decoration:none;"><span style=" color:White; font-weight:bold; font-size:medium;">订单管理</span></a>
      &nbsp; &nbsp; &nbsp;|&nbsp;&nbsp;&nbsp;
-     <a href=""  style=" text-decoration:none;"><span style=" color:White; font-weight:bold; font-size:medium; font-family:宋体">评价管理</span></a>
-     &nbsp; &nbsp; &nbsp;|&nbsp;&nbsp;&nbsp;
-      <a href="{:url('index/index/index')}" style="text-decoration:none;"><span style=" color:White; font-weight:bold; font-size:medium; font-family:宋体">前台主页</span></a>
+
+      <a href="{:url('index/index/index')}" style="text-decoration:none;"><span style=" color:White; font-weight:bold; font-size:medium;">前台主页</span></a>
     &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;
-    <a href="{:url('index/index')}" style="text-decoration:none;"><span style=" color:White; font-weight:bold; font-size:medium; font-family:宋体">后台主页</span></a>
+    <a href="{:url('index/index')}" style="text-decoration:none;"><span style=" color:White; font-weight:bold; font-size:medium;">后台主页</span></a>
     &nbsp;&nbsp;&nbsp;</span>
    
 </td>
 </tr>
 
-</table></center>
+</table>
+</center>
