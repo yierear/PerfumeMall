@@ -1,4 +1,4 @@
-{include  file="./public/common/admintop.html"/}
+
 <!DOCTYPE html>
 <html>
 <meta charset="utf-8">
@@ -14,6 +14,7 @@
 <body>
 	<center>
 		<div class="box">
+		{include  file="./public/common/admintop.html"/}
 			<form action="{:url('adminlogin/doLogin')}" method="post" name=f>
 				<table style="width:500px; border-width:3px; border-style:dotted;">
 					<tr>
@@ -30,23 +31,14 @@
 							<input type="password" name="password">
 						</td>
 					</tr>
-					 <form action="{:url('adminlogin/doLogin')}" method="post">
-
-        <img src="image_captcha.php"  onclick="this.src='image_captcha.php?'+new Date().getTime();" width="200" height="200"><br/>
-
-        <input type="text" name="captcha" placeholder="请输入图片中的验证码"><br/>
-
-        <input type="submit" value="验证">
-
-    </form>
 					<tr>
 						<td colspan=2 style="text-align:center;height:60px;">
-							<input type=submit name=s style="background-color:#D4B684;" value="登录">
+							<input type=submit name=s style="background-color:#D4B684" value="登录">
 						</td>
 					</tr>
 				</table>
 			</form>
-			<br><br><br><br><br><br><br><br><br><br><br>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 			
 			
 		</div>
