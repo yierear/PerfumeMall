@@ -1,15 +1,23 @@
-{include  file="./public/common/top.html"/}
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+		.box{
+				background-image: url(__ROOT__/public/static/image/background.png);
+				background-size: cover;            
+}
+	</style>
 </head>
 <body>
+<div  class="box" >
+{include  file="./public/common/top.html"/}
 <center>
 <form action="{:url('login/dologin')}" method="post" name=f>
 <table style="width:500px; border-width:3px; border-style:dotted;">
-<tr><td colspan=2 style="text-align:center;height:60px;  font-family:宋体">请登录香谷之旅</td></tr>
+<tr><td colspan=2 style="text-align:center;height:60px; ">请登录香谷之旅</td></tr>
 <tr>
  <td style="text-align:right;height:30px;">E-mail地址：</td>
 <td align=left><input type=text name="email" value="a@163.com"></td>
@@ -18,10 +26,15 @@
 <td style="text-align:right;height:60px;">密码：</td>
 <td align=left><input type=password name="passw"></td>
 <tr><td colspan=2 style="text-align:center;height:60px;">
-<input type=submit name=s style="background-color:rgb(227,161,21);" value="登录">
+<input type=submit name=s style="background-color:#D4B684; " value="登录" >
 </td></tr>
 </table>
 </form>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<tr style="text-align:center;">Copyright © 2023, PerfumeMall.com, All Rights Reserved 粤华师备 20132003040号 粤ICP备 123456号</tr>
+
 </center>
+</div>
+
 </body>
 </html>

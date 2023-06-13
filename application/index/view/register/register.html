@@ -1,43 +1,51 @@
-﻿{include  file="./public/common/top.html"/}
+﻿
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript"
-	src="__ROOT__/public/static/js/jquery-1.4.2.js"></script>
-	
+	<script type="text/javascript"  src="__ROOT__/public/static/js/jquery-1.4.2.js">
+	</script>
+	<style type="text/css">
+		.box{
+				background-image: url(__ROOT__/public/static/image/background.png);
+				background-size: cover;            
+}
+	</style>
 </head>
-<body>
-<meta charset="utf-8">
-<br><br><center>
+<body >
+<div class="box" >
+	{include  file="./public/common/top.html"/}
+
+<center>
 <form action="{:url('/index/register/doRegister')}" method="post" n="f">
-<table style="width:500px; border-width:3px; border-style:dotted;">
-<tr><td colspan=2 style="text-align:center;height:60px;">
-注册</td></tr>
-<tr>
- <td style="text-align:right;height:30px;">E-mail地址：</td>
-<td align=left><input type=text name="email" value="a@163.com" />
-<span></span></td>
-</tr>
-
-<tr>
-<td style="text-align:right;height:60px;">密码：</td>
-<td align=left><input type="password" name="passw1" />
-<span></span></td>
-</tr>
-<tr>
-<td style="text-align:right;height:30px;">确认密码：</td>
-<td align=left><input type="password" name="passw2" />
-<span></span></td>
-</tr>
-
-<tr><td colspan="2" style="text-align:center;height:60px;">
-<input type=submit name=s style="background-color:rgb(227,161,21);" value="注册">
-</td></tr>
+	<table style="width:500px; border-width:3px; border-style:dotted;">
+		<tr>
+			<td colspan=2 style="text-align:center;height:60px;">注册</td>
+		</tr>
+		<tr>
+ 			<td style="text-align:right;height:30px;">E-mail地址：</td>
+			<td align=left><input type=text name="email" value="a@163.com" /></td>
+		</tr>
+		<tr>
+			<td style="text-align:right;height:60px;">密码：</td>
+			<td align=left><input type="password" name="passw1" /></td>
+		</tr>
+		<tr>
+			<td style="text-align:right;height:30px;">确认密码：</td>
+			<td align=left><input type="password" name="passw2" /></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="text-align:center;height:60px;">
+				<input type=submit name=s style="background-color:rgb(212,182,132);" value="注册">
+			</td>
+		</tr>
 </table>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </form>
-{include file="./public/common/bottom.html"/}
+<tr style="text-align:center;">Copyright © 2023, PerfumeMall.com, All Rights Reserved 粤华师备 20132003040号 粤ICP备 123456号</tr>
+
 </center>
+</div>
 </body>
 </html>
