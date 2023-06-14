@@ -45,13 +45,14 @@ class Index extends Controller
 //                 ->order('SelledNum','desc')
 //                 ->paginate(5);
 
-//         $this->assign('sort',$data);
+//         $this->assign('sort',$data);0
 //         $page=$data->render();
 //         $this->assign('page1',$page);
 //         return $this->fetch();
 //     }
     
-    public function showperfume(){      
+    public function showperfume(){
+        
         $data = Db::table('perfume')->order('SelledNum','desc')->paginate(5);
         $this->assign('result',$data);
         $page=$data->render();
