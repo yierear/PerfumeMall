@@ -13,11 +13,15 @@ class Adminlogin extends Controller
     public function doLogin(){
         $username = input('post.username');
         $password = input('post.password');
+        $code = input('code');
         if(empty($username)){
             $this->error('用户名不能为空');
         }
         if(empty($password)){
             $this->error('密码不能为空');
+        }
+        if(empty($code)){
+            $this->error('请输入验证码');
         }
         $user=Admin::get($username);
         if(empty($user)){
