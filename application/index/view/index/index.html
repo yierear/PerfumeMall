@@ -4,11 +4,45 @@
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 	<link href="__ROOT__/public/static/css/prodList.css" rel="stylesheet" type="text/css">
+	<style>
+	    #pp2{
+		width:9999px;
+		height:9999px;
+		animation:switch 15s infinite;
+		}
+		#pp2>img{
+		float:left;
+		}
+		#pp1{
+		width:999px;
+		height:300px;
+		overflow:hidden;
+		margin-bottom:30px;
+		}
+		@keyframes switch{
+		0%{};
+		20%{transform:translateX(0px);}
+		40%{transform:translateX(-999px);}
+		60%{transform:translateX(-1998px);}
+		80%{transform:translateX(-2997px);}
+		100%{transform:translateX(-3996px);}
+		}
+		
+	</style>
 </head>
 <body>
 <center>
-<div id="content">
+<div id="content" style="margin-top:0px;">
 
+		<div id="pp1">
+		    <div id="pp2">
+			     <img src="__ROOT__/public/static/picture/poster.png"/>
+			     <img src="__ROOT__/public/static/picture/poster1.png"/>
+			     <img src="__ROOT__/public/static/picture/poster2.png"/>
+			     <img src="__ROOT__/public/static/picture/poster3.png"/>
+			     <img src="__ROOT__/public/static/picture/poster4.png"/>
+			</div>
+	    </div>
 		<div id="search_div">
 			<form method="post" action="{:url('index/index')}">
 				<span class="input_span">商品名：<input type="text" name="pname"/></span>
