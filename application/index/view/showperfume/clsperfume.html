@@ -1,53 +1,102 @@
 {include  file="./public/common/top.html"/}
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
-	<link href="__ROOT__/public/static/css/prodList.css" rel="stylesheet" type="text/css">
+<meta charset="UTF-8">
+<title>香水显示</title>
+<link href="__ROOT__/public/static/css/StyleIndex.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+ .page {
+ 	width:760px;
+ 	height: 40px;
+ 	margin-left:30px;
+ 	background-color: #D4B684;
+ }           
+ .page ul {
+ 	list-style: none;               
+ 	margin-left: 150px;
+ }           
+ .page li {
+ 	display: block;
+ 	float: left;
+ }           
+ .page a {
+ 	line-height: 40px;
+ 	display: block;
+ 	color: #fff;
+ 	text-decoration: none;
+ 	padding: 0 20px;
+ }           
+ .page a:hover {
+ 	background-color: #D5A684;
+ }
+ .right{
+	margin-top:0px;
+ }
+.page .pagination .active{
+ 	background-color: #D5A684;
+ 	color: #fff;
+	line-height: 40px;
+	padding: 0 20px;
+}  
+.page .pagination .disabled{color:#aaa;}
+</style>
 </head>
 <body>
 <center>
-<div id="content">
-
-		<div id="search_div">
-			<form method="post" action="{:url('index/index')}">
-				<span class="input_span">商品名：<input type="text" name="pname"/></span>
-				<span class="input_span">商品种类：
-				<select name="pclass">
-				<Option value="">不限</option>
-				{foreach $pclasses as $pclass}
-				<Option value="{$pclass.pclass}">{$pclass.pclass}</option>
-				{/foreach}
-				</select>
-				</span>
-				<span class="input_span">商品价格区间：<input type="text" name="minprice" value="0"/> - <input type="text" name="maxprice"  value="1000"/></span>
-				<input type="submit" value="查 询">
-			</form>
-		</div>
-
-
-	<div id="prod_content">
-	{foreach $perfumes as $perfume}
-		<div class="prod_div">
-			<a href="__ROOT__/index.php/index/showperfume/perfumedetail.html?perfumeID={$perfume.perfumeID}">
-				<img src="__ROOT__/public/static/picture/{$perfume.picturem}" border="0"/>
-			</a>
-				<div id="prod_name_div">{$perfume.pname}</div>
-				<div id="prod_price_div">￥{$perfume.yourprice}元</div>
-				<div>
-					<div id="gotocart_div">
-					<a href="{:url('cart/addCart')}?perfumeID={$perfume.perfumeID}">加入购物车</a>
-					</div>					
-					<div id="say_div">{$perfume.SelledNum}人购买</div>					
-				</div>
-			</div>
-		{/foreach}	
-			
-			<div style="clear: both"></div>
-	</div>
+<div class="content">
+<div class="left">
+{include  file="./public/common/left.html"/}
 </div>
+
+<div class="right" >
+	<div class="page">{$page}</div>
+	{foreach $result as $perfume}
+
+	<table style='margin-left:30px;width:760px;border-width:1px;border-style:dotted;' align=center>
+	     <tr>
+	        <td rowspan=7 width=170>
+	        	<a href="__ROOT__/index.php/index/showperfume/perfumedetail.html?perfumeID={$perfume.perfumeID}">
+					<img src="__ROOT__/public/static/picture/{$perfume.picturem}" border="0"/>
+	        	</a>
+	        </td>
+	        <td colspan=2 align=center>
+	        	<div style='font-weight:bold;font-size:25px;height:40px;line-height:40px;text-align:center;'>{$perfume.pname}</div>
+	         </td>          	
+	     </tr>
+	     <tr>
+	       <td width=50><font size=2>前调：</font></td>
+	       <td><font size=2>{$perfume.qiandiao}</font></td> 
+	     </tr>
+	     <tr>
+	     	<td width=50><font size=2>中调：</font></td>
+	     	<td><font size=2>{$perfume.zhongdiao}</font></td>
+	     </tr>
+	    <tr>
+	     	<td width=50><font size=2>后调：</font></td>
+	     	<td><font size=2>{$perfume.houdiao} </font></td>
+	     </tr>
+	     
+	     <tr>
+	     	<td colspan=2>
+	     		<div style='text-align:left;font-size: medium; color: #000066;'>
+	     			<div style='text-decoration:line-through;margin-top:8px;'>原价:￥{$perfume.price}</div>
+	     			现价：<font size=4 color=#BB2732 ><b>￥{$perfume.yourprice}</b></font>
+	     		</div>
+	     	</td>
+	     </tr>
+	     <tr>
+	     	<td colspan=2>
+	     		<a href='__ROOT__/index.php/index/cart/addcart.html?perfumeID={$perfume.perfumeID}'>
+				<img src="__ROOT__/public/static/image/addCart.png" border="0" style="width:160px;height:50px"/>
+				</a>
+			</td>
+	     </tr>
+	</table>
+	{/foreach}
+
+	<div class="page">{$page}</div>
 </div>
-	{include file="./public/common/bottom.html"/}
 </center>
 </body>
 </html>
