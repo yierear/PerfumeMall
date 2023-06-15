@@ -9,6 +9,7 @@ class Login extends Controller
         return view();
     }
     
+    
     public function dologin(){
         if (empty(input('post.email'))){
             $this->error('email不能为空');
@@ -21,6 +22,14 @@ class Login extends Controller
         
         if ($rs['password']!=md5(input('post.passw'))){
             $this->error('密码错误');
+        }
+        if (empty(input('post.code'))){
+            $this->error('请输入验证码');
+        }
+        
+        $login=new Login();
+        if (captcha_check('post.code')) {
+            $this->error('验证码错误');
         }
         
         session('email',$rs['email']);

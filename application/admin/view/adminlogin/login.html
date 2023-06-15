@@ -16,43 +16,36 @@
 		<div class="box">
 		{include  file="./public/common/admintop.html"/}
 			<form action="{:url('adminlogin/doLogin')}" method="post" name=f>
-				<table style="width:500px; border-width:3px; border-style:dotted;">
+				<table ">
 					<tr>
 					<br><br><br>
 						<td colspan=2 style="text-align:center;height:60px;">香谷之旅后台登录</td>
 					</tr>
-					<tr style="text-align:center;">
-	 					<td style="text-align:right;height:30px;">用户名：</td>
-						<td align=left><input type=text name="username" value="admin"></td>
-					</tr>
-					<tr>
-						<td style="text-align:right;height:60px;">密码：</td>
-						<td align=left>
-							<input type="password" name="password">
-						</td>
-					</tr>
-					<tr>
-                    <td style="text-align:right;height:60px;">验证码 ：</td>
-                    <td align=left><input type="text" name="code" size="5" /></td>
-                    <!-- 输出drawcode.php页面的图像，并设置点击刷新功能 -->
-                    <td><img src="drawcode.php" onclick="rcode()" id="imgcode"></td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align:center;height:60px;">
-                        <input name="submit" type="reset" style="background-color:#D4B684" value="重置" />
-                    </td>
-                </tr>
-                <script>
-    function rcode() {
-        var imgcode = document.getElementById('imgcode');
-        imgcode.src = "drawcode.php";
-    }
-    </script>
-					<tr>
-						<td colspan=2 style="text-align:center;height:60px;">
-							<input type=submit name=s style="background-color:#D4B684" value="登录">
-						</td>
-					</tr>
+<tr>
+ <td style="text-align:right;height:30px;">E-mail地址：</td>
+<td align=left><input type=text name="username" value="admin"></td>
+</tr>
+<tr>
+<td style="text-align:right;height:60px;">密码：</td>
+<td align=left><input type=password name="password"></td>
+</table>
+<FORM	method="post"	class="form"	action="{:url('check')}">
+<tr>
+<tdstyle="text-align:right;height:60px;">
+输入验证码：<INPUT	type="text"	class="text" name="code">
+</td>
+</tr>
+<p>
+<tr>
+<td>
+<span style="width:15px;heigth:15px;">{:captcha_img()}</span>
+</td>
+</tr>
+</FORM>
+<p>
+<tr><td colspan=2 style="text-align:center;height:60px;">
+<input type=submit name=s style="background-color:#D4B684; " value="登录" >
+</td></tr>
 				</table>
 			</form>
 			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
